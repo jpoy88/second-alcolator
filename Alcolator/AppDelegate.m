@@ -6,10 +6,12 @@
 //  Copyright (c) 2014 John Adapon. All rights reserved.
 //
 
+//#import "MainMenuViewController.h"
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import "WhiskeyViewController.h"
 
-@interface AppDelegate ()
+@interface AppDelegate () <UITabBarControllerDelegate>
 
 @end
 
@@ -20,13 +22,45 @@
     
     
         self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] ;
+    
+    
+    
         // Override point for customization after application launch.
-        ViewController *viewController = [[ViewController alloc] init];
-        self.window.rootViewController = viewController;
-        [self.window makeKeyAndVisible];
+        //ViewController *viewController = [[ViewController alloc] init];
+        //self.window.rootViewController = viewController;
+    
+    //MainMenuViewController *mainMenuViewController= [[MainMenuViewController alloc] init];
+    //UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:mainMenuViewController];
+    //self.window.rootViewController = navigationController;
+    
+    
+    ViewController *wineVC = [[ViewController alloc] init];
+    WhiskeyViewController *whiskeyVC = [[WhiskeyViewController alloc] init];
+    UITabBarController *tabBarVC = [[UITabBarController alloc] init];
+    tabBarVC.viewControllers = @[wineVC, whiskeyVC];
+    
+    tabBarVC.delegate = self;
+    
+    self.window.rootViewController = tabBarVC;
+    
+    [self.window makeKeyAndVisible];
         return YES;
     
-    return YES;
+    
+    
+}
+
+- (void) tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
+    
+    if (tabBarController.selectedIndex == 0){
+        NSLog(@"New View Controller Selected: Wine");
+    }else{
+        NSLog(@"New View Controller Selected: Whiskey");
+    }
+    
+    
+    
+
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
