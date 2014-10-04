@@ -54,7 +54,7 @@
     [self.whiskeyButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     [self.whiskeyButton setBackgroundColor:[UIColor whiteColor]];
 }
-
+ 
 - (void) viewWillLayoutSubviews {
     
     CGFloat viewWidth = [UIScreen mainScreen].bounds.size.width;

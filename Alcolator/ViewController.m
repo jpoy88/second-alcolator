@@ -52,11 +52,27 @@
     self.hideKeyboardTapGestureRecognizer = tap;
 }
 
+- (instancetype) init {
+    self = [super init];
+    
+    if (self) {
+        self.title = NSLocalizedString(@"Wine", @"wine");
+        
+        
+        // Since we don't have icons, let's move the title to the middle of the tab bar
+        [self.tabBarItem setTitlePositionAdjustment:UIOffsetMake(0, -18)];
+    }
+    
+    return self;
+    
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    self.title = NSLocalizedString(@"Wine", @"wine");
+    //self.title = NSLocalizedString(@"Wine", @"wine");
     
     // Font
     //UIFont *calculateFont = [UIFont fontWithName:@"Times New Roman" size:17.0f];
@@ -64,7 +80,8 @@
     
     
     // Set our primary view's background color to lightGrayColor
-    self.view.backgroundColor = [UIColor lightGrayColor];
+    //self.view.backgroundColor = [UIColor lightGrayColor];
+    self.view.backgroundColor = [UIColor colorWithRed:0.741 green:0.925 blue:0.714 alpha:1];
     
     // Tells the text field that `self`, this instance of `BLCViewController` should be treated as the text field's delegate
     self.beerPercentTextField.delegate = self;
@@ -172,7 +189,7 @@
     NSLog(@"Slider value changed to %f", sender.value);
     [self.beerPercentTextField resignFirstResponder];
     
-    
+    [self.tabBarItem setBadgeValue:[NSString stringWithFormat:@"%d", (int) sender.value]];
    
     
 }

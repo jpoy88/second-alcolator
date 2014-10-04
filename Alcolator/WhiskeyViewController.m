@@ -15,11 +15,26 @@
 
 @implementation WhiskeyViewController
 
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.title = NSLocalizedString(@"Whiskey", @"whiskey");
+        
+        // Since we don't have icons, let's move the title to the middle of the tab bar
+        [self.tabBarItem setTitlePositionAdjustment:UIOffsetMake(0, -18)];
+
+    }
+                                       
+            return self;
+}
+
 - (void) viewDidLoad {
-    self.title = NSLocalizedString(@"Whiskey", @"whiskey");
+    //self.title = NSLocalizedString(@"Whiskey", @"whiskey");
     
     // Set our primary view's background color to lightGrayColor
-    self.view.backgroundColor = [UIColor lightGrayColor];
+    //self.view.backgroundColor = [UIColor lightGrayColor];
+    self.view.backgroundColor = [UIColor colorWithRed:0.992 green:0.992 blue:0.588 alpha:1];
+    
     
     // Tells the text field that `self`, this instance of `BLCViewController` should be treated as the text field's delegate
     self.beerPercentTextField.delegate = self;
@@ -110,7 +125,7 @@
     [self.beerPercentTextField resignFirstResponder];
     
     
-    
+    [self.tabBarItem setBadgeValue:[NSString stringWithFormat:@"%d", (int) sender.value]];
     
 }
 
