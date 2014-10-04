@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE1E9E7819DFA25C00651FB9 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE1E9E7719DFA25C00651FB9 /* MainMenuViewController.m */; };
 		AE2BC15319DBAF7E008E474D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AE2BC15219DBAF7E008E474D /* main.m */; };
 		AE2BC15619DBAF7E008E474D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AE2BC15519DBAF7E008E474D /* AppDelegate.m */; };
 		AE2BC15919DBAF7E008E474D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AE2BC15819DBAF7E008E474D /* ViewController.m */; };
@@ -27,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AE1E9E7619DFA25C00651FB9 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
+		AE1E9E7719DFA25C00651FB9 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 		AE2BC14D19DBAF7E008E474D /* Alcolator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alcolator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE2BC15119DBAF7E008E474D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE2BC15219DBAF7E008E474D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -91,6 +94,8 @@
 				AE2BC15D19DBAF7E008E474D /* Images.xcassets */,
 				AE2BC15F19DBAF7E008E474D /* LaunchScreen.xib */,
 				AE2BC15019DBAF7E008E474D /* Supporting Files */,
+				AE1E9E7619DFA25C00651FB9 /* MainMenuViewController.h */,
+				AE1E9E7719DFA25C00651FB9 /* MainMenuViewController.m */,
 			);
 			path = Alcolator;
 			sourceTree = "<group>";
@@ -224,6 +229,7 @@
 				AE3BD85F19DBD0FB00E04C85 /* WhiskeyViewController.m in Sources */,
 				AE2BC15619DBAF7E008E474D /* AppDelegate.m in Sources */,
 				AE2BC15319DBAF7E008E474D /* main.m in Sources */,
+				AE1E9E7819DFA25C00651FB9 /* MainMenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
