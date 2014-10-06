@@ -11,8 +11,8 @@
 @interface ViewController () <UITextFieldDelegate>
 
 
-@property (weak, nonatomic) UIButton *calculateButton;
-@property (weak, nonatomic) UITapGestureRecognizer *hideKeyboardTapGestureRecognizer;
+
+
 
 @end
 
@@ -55,6 +55,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    self.title = NSLocalizedString(@"Wine", @"wine");
     
     // Font
     //UIFont *calculateFont = [UIFont fontWithName:@"Times New Roman" size:17.0f];

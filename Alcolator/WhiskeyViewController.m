@@ -6,13 +6,24 @@
 //  Copyright (c) 2014 John Adapon. All rights reserved.
 //
 
+
 #import "WhiskeyViewController.h"
 
-@interface WhiskeyViewController ()
+@interface WhiskeyViewController () <UITextFieldDelegate>
 
 @end
 
 @implementation WhiskeyViewController
+
+- (void) viewDidLoad {
+    
+    
+    [super viewDidLoad]; // <-- allows to get all the stuff from the view controller and just add the changes in this (whiskey)view controller
+    
+    
+    self.title = NSLocalizedString(@"Whiskey", @"whiskey");
+    
+    }
 
 - (void)buttonPressed:(UIButton *)sender;
 {
@@ -50,5 +61,12 @@
     NSString *resultText = [NSString stringWithFormat:NSLocalizedString(@"%d %@ contains as much alcohol as %.1f %@ of whiskey.", nil), numberOfBeers, beerText, numberOfWhiskeyGlassesForEquivalentAlcoholAmount, whiskeyText];
     self.resultLabel.text = resultText;
 }
+
+
+- (void)tapGestureDidFire:(UITapGestureRecognizer *)sender {
+    [self.beerPercentTextField resignFirstResponder];
+}
+
+
 
 @end

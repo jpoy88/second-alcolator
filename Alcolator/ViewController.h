@@ -13,6 +13,8 @@
 @property (weak, nonatomic) UITextField *beerPercentTextField;
 @property (weak, nonatomic) UILabel *resultLabel;
 @property (weak, nonatomic) UISlider *beerCountSlider;
+@property (weak, nonatomic) UIButton *calculateButton;
+@property (weak, nonatomic) UITapGestureRecognizer *hideKeyboardTapGestureRecognizer;
 
 - (void)buttonPressed:(UIButton *)sender;
 
