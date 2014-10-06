@@ -16,44 +16,14 @@
 @implementation WhiskeyViewController
 
 - (void) viewDidLoad {
+    
+    
+    [super viewDidLoad]; // <-- allows to get all the stuff from the view controller and just add the changes in this (whiskey)view controller
+    
+    
     self.title = NSLocalizedString(@"Whiskey", @"whiskey");
     
-    // Set our primary view's background color to lightGrayColor
-    self.view.backgroundColor = [UIColor lightGrayColor];
-    
-    // Tells the text field that `self`, this instance of `BLCViewController` should be treated as the text field's delegate
-    self.beerPercentTextField.delegate = self;
-    self.beerPercentTextField.backgroundColor = [UIColor whiteColor];
-    
-    // Set the placeholder text
-    self.beerPercentTextField.placeholder = NSLocalizedString(@"% Alcohol Content Per Beer", @"Beer percent placeholder text");
-    
-    // Tells `self.beerCountSlider` that when its value changes, it should call `[self -sliderValueDidChange:]`.
-    // This is equivalent to connecting the IBAction in our previous checkpoint
-    [self.beerCountSlider addTarget:self action:@selector(sliderValueDidChange:) forControlEvents:UIControlEventValueChanged];
-    
-    // Set the minimum and maximum number of beers
-    self.beerCountSlider.minimumValue = 1;
-    self.beerCountSlider.maximumValue = 10;
-    
-    // Tells `self.calculateButton` that when a finger is lifted from the button while still inside its bounds, to call `[self -buttonPressed:]`
-    [self.calculateButton addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
-    
-    // Set the title of the button
-    [self.calculateButton setTitle:NSLocalizedString(@"Calculate!", @"Calculate command") forState:UIControlStateNormal];
-    
-    [self.calculateButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
-    //[self.calculateButton setFont:[UIFont fontWithName:@"Verdana" size:29.0f]];
-    self.calculateButton.titleLabel.font = [UIFont fontWithName:@"Times New Roman" size:20.0f];
-    self.calculateButton.titleLabel.textColor = [UIColor whiteColor];
-    //self.calculateButton.font = calculateFont;
-    // Tells the tap gesture recognizer to call `[self -tapGestureDidFire:]` when it detects a tap.
-    [self.hideKeyboardTapGestureRecognizer addTarget:self action:@selector(tapGestureDidFire:)];
-    
-    // Gets rid of the maximum number of lines on the label
-    self.resultLabel.numberOfLines = 0;
-
-}
+    }
 
 - (void)buttonPressed:(UIButton *)sender;
 {
@@ -90,28 +60,6 @@
     
     NSString *resultText = [NSString stringWithFormat:NSLocalizedString(@"%d %@ contains as much alcohol as %.1f %@ of whiskey.", nil), numberOfBeers, beerText, numberOfWhiskeyGlassesForEquivalentAlcoholAmount, whiskeyText];
     self.resultLabel.text = resultText;
-}
-
-- (void)textFieldDidChange:(UITextField *)sender {
-    
-    // Make sure the text is a number
-    NSString *enteredText = sender.text;
-    float enteredNumber = [enteredText floatValue];
-    
-    if (enteredNumber == 0) {
-        // The user typed 0, or something that's not a number, so clear the field
-        sender.text = [NSString string];
-    }
-}
-
-- (void)sliderValueDidChange:(UISlider *)sender {
-    
-    NSLog(@"Slider value changed to %f", sender.value);
-    [self.beerPercentTextField resignFirstResponder];
-    
-    
-    
-    
 }
 
 
